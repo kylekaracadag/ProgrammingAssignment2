@@ -17,9 +17,9 @@ For this problem I used strategy 3, using a queue to have guests enter the room.
 I believe this strategy is the best out of the three because it is the simplest and the most risk free one. The first strategy I would say is the worst one because not every thread may be able to visit the room because we can have the thread that is inside the room run for as long as it wants. We can also have too many threads trying to check to see if the room is empty. The second strategy is promising but we would have to make sure we put a lock on the variable that shows whether or not the room is available or busy and a simpler solution to using a lock like that is to simply just use a queue which is pretty much what I did for strategy 3.
 
 ## Execution Times
-|   N   | Problem 1|Problem 2|   |   |
-|-------|----------|---------|---|---|
-| 10    | 0.0013s  | 0.0012s |   |   |
-| 100   | 0.0132s  | 0.0031s |   |   |
-| 1000  | 0.7436s  | 0.0148s |   |   |
-| 10000 | 87.8619s | 0.0842s |   |   |
+|   N   | Problem 1|Problem 2|
+|-------|----------|---------|
+| 10    | 0.0013s  | 0.0012s |
+| 100   | 0.0132s  | 0.0031s |
+| 1000  | 0.7436s  | 0.0148s |
+| 10000 | 87.8619s | 0.0842s |
