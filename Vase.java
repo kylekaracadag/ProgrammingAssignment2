@@ -4,7 +4,7 @@ import java.util.concurrent.*;
 
 
 class Vase {
-    static int n = 10;
+    static int n = 10000;
 
     public static class Worker extends Thread {
 
@@ -16,7 +16,7 @@ class Vase {
             System.out.println("Guest " + getName() + " entered the room");
 
             try {
-                sleep(100);
+                sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -26,6 +26,8 @@ class Vase {
     }
 
     public static void main(String[] args) {
+        long startTime = System.nanoTime();
+
         Thread[] threads = new Thread[n];
         Queue<Integer> queue = new LinkedList<>();
 
@@ -62,5 +64,10 @@ class Vase {
         }
 
         System.out.println("\nNo guests left in the queue");
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        double totalTimeSeconds = (double) totalTime / 1_000_000_000;
+        System.out.println("Execution Time: " + totalTimeSeconds);
     }
 }

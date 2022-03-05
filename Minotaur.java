@@ -8,7 +8,7 @@ class Minotaur {
     // True represents that there is a cake on the plate
     // False represents that there is no cake on the plate
     // We start off with a cake on the plate so initialize to true
-    static int n = 10;
+    static int n = 10000;
     static AtomicBoolean cake = new AtomicBoolean(true); 
     static AtomicBoolean isLeader = new AtomicBoolean(false); 
     static AtomicInteger counter =  new AtomicInteger(0);
@@ -46,6 +46,8 @@ class Minotaur {
     }
 
     public static void main(String[] args) {
+        long startTime = System.nanoTime();
+
         // Initialize the array of n number of threads
         Thread[] threads = new Thread[n];
 
@@ -83,6 +85,11 @@ class Minotaur {
             }
         }
 
-        System.out.println("\nEvery guest entered the Minotaur's labyrinth");
+        System.out.println("\nEvery guest entered the Minotaur's labyrinth\n");
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        double totalTimeSeconds = (double) totalTime / 1_000_000_000;
+        System.out.println("Execution Time: " + totalTimeSeconds);
     }
 }
