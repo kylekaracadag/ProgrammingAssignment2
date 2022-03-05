@@ -1,4 +1,4 @@
-# ProgrammingAssignment2
+# Programming Assignment 2
 ## Instructions for running the program
  - Download all the files in this repository and put them in a folder
  - Open your command prompt and change the directory to the folder you created
